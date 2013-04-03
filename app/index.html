@@ -9,13 +9,27 @@
     <body>
         <div class="hero-unit span10 offset2" id="container">
             <h1 class="offset2">Push to phone</h1>
-            <!--<img class="offset4" style="margin-top: 50px" src="/static/img/plain_sign_in_red.png" id="persona-signin">-->
+            {% if email %}
+            <h5 class="offset1">Hi {{ email }}</h5>
             <p>
-            <form class="form-inline offset2 span4" action="/install" method="POST">
+            <form class="offset1" action="/install" method="POST">
+                <label for="manifest">Application</label>
                 <input type="text" class="input-small span3" placeholder="Manifest URL" name="manifest">
+                <fieldset>
+                    <legend>Devices to install to</legend>
+                    {% for device in devices %}
+                    <label class="checkbox">
+                        <input type="checkbox" value="{{device}}" name="device-{{loop.index0}}">
+                        {{ device }}
+                    </label>
+                    {% endfor %}
+                </fieldset>
                 <button type="submit" class="btn ">Install</button>
             </form>
             </p>
+            {% else %}
+            <img class="offset4" style="margin-top: 50px" src="/static/img/plain_sign_in_red.png" id="persona-signin">
+            {% endif %}
         </div>
         <script src="/static/js/bootstrap.min.js"></script>
         <script src="/static/js/app.js"></script>
