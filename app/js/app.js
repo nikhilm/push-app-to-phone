@@ -17,10 +17,10 @@ $(function() {
     navigator.id.request();
   });
 
-  if (navigator.mozApps) {
+  /*if (navigator.mozApps) {
     $('#container').append('<a id="install-button" class="btn btn-primary offset4">Install</a>');
     $('#install-button').click(function() {
       navigator.mozApps.install("http://localhost:5000/static/manifest.webapp");
     });
-  }
+  }*/
 });

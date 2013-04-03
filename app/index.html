@@ -9,7 +9,13 @@
     <body>
         <div class="hero-unit span10 offset2" id="container">
             <h1 class="offset2">Push to phone</h1>
-            <img class="offset4" style="margin-top: 50px" src="/static/img/plain_sign_in_red.png" id="persona-signin">
+            <!--<img class="offset4" style="margin-top: 50px" src="/static/img/plain_sign_in_red.png" id="persona-signin">-->
+            <p>
+            <form class="form-inline offset2 span4" action="/install" method="POST">
+                <input type="text" class="input-small span3" placeholder="Manifest URL" name="manifest">
+                <button type="submit" class="btn ">Install</button>
+            </form>
+            </p>
         </div>
         <script src="/static/js/bootstrap.min.js"></script>
         <script src="/static/js/app.js"></script>
